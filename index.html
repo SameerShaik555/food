@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Course - Rice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #ffcc00;
+            padding: 10px 0;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: red;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000;
+        }
+
+        .side-navbar {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            height: 100vh;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 70px; /* Adjusted to align below the navbar */
+            left: 0;
+            width: 120px;
+        }
+
+        .side-navbar .nav-link {
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .side-navbar .nav-link img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .side-navbar .nav-link.active {
+            background-color: #e9ecef;
+            border-radius: 10px;
+        }
+
+        .content {
+            margin-left: 140px; /* Adjusted for proper alignment */
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+    .side-navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        padding-top: 20px;
+    }
+    .navbar-toggler {
+        float: right;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="@@@ Foods" width="150">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="Allitems.html">All Items</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Alcohol.html">Alcohol</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Starters.html">Starters</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Main Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Add Ons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Desserts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Drinks.html">Drinks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Hot Drinks.html">Hot Drinks</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" data-target="rice-section">
+                    <img src="rice side bar.png" alt="Rice">
+                    Rice
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-target="biryani-section">
+                    <img src="biryani_sidebar.png" alt="Biryani">
+                    Biryani
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-target="veg-curry-section">
+                    <img src="mixed-vegetable-curry-480x270.jpg" alt="Veg Curry">
+                    Veg Curry
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-target="non-veg-curry-section">
+                    <img src="curry.jpg" alt="Non-Veg Curry">
+                    Non-Veg Curry
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="rice-section" class="section active">
+            <h2>Main Course - Rice</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="rice side bar.png" class="card-img-top" alt="White Rice">
+                        <div class="card-body">
+                            <h5 class="card-title">White Rice</h5>
+                            <p class="card-text">£1.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="rice/lemon-rice-stovetop-featured.jpg" class="card-img-top" alt="Lemon Rice">
+                        <div class="card-body">
+                            <h5 class="card-title">Lemon Rice</h5>
+                            <p class="card-text">£1.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="rice/pulorice.jpg" class="card-img-top" alt="Pulo Rice">
+                        <div class="card-body">
+                            <h5 class="card-title">Pulo Rice</h5>
+                            <p class="card-text">£1.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="biryani-section" class="section">
+            <h2>Main Course - Biryani</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="biryani_sidebar.png" class="card-img-top" alt="Biryani">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Biryani</h5>
+                            <p class="card-text">£4.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="veg-curry-section" class="section">
+            <h2>Main Course - Veg Curry</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="mixed-vegetable-curry-480x270.jpg" class="card-img-top" alt="Veg Curry">
+                        <div class="card-body">
+                            <h5 class="card-title">Mixed Vegetable Curry</h5>
+                            <p class="card-text">£3.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="non-veg-curry-section" class="section">
+            <h2>Main Course - Non-Veg Curry</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="curry.jpg" class="card-img-top" alt="Non-Veg Curry">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Curry</h5>
+                            <p class="card-text">£5.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.side-navbar .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove active class from all links and sections
+                document.querySelectorAll('.side-navbar .nav-link').forEach(nav => nav.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('activeHere's the completion of the JavaScript section and the HTML structure. I corrected the JavaScript code to ensure proper functionality when clicking the items in the sidebar:
+
+```html
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.side-navbar .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove active class from all links and sections
+                document.querySelectorAll('.side-navbar .nav-link').forEach(nav => nav.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+
+                // Add active class to the clicked link and the target section
+                this.classList.add('active');
+                const target = this.getAttribute('data-target');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
