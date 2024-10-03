@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Drinks</title>
+    <title>Desserts</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -80,77 +80,72 @@
             padding: 30px;
         }
 
-        /* Card hover with gold edge animation */
-                /* Card hover with gold edge animation */
-        .card {
-    background-color: #1e1e1e;
-    color: #ffd700;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: -2px; /* Align it properly around the edges */
-    left: -2px;
-    width: calc(100% + 4px); /* Keep it just slightly outside the border */
-    height: calc(100% + 4px);
-    background: linear-gradient(270deg, #000000, #ffd700, #333333, #000000);
-    background-size: 400% 400%;
-    animation: borderGradient 5s ease infinite;
-    border-radius: 10px;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0;
-}
-
-@keyframes borderGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* Ensure the image remains visible */
-.card-img-top {
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    z-index: 2; /* Keep the image above the border animation */
-    position: relative;
-}
-
-.card-body {
-    position: relative;
-    z-index: 2;
-    color: #ffd700;
-}
-
-        .card-title {
+        /* Change Desserts heading color to gold */
+        h2 {
             color: #ffd900;
-            font-weight: 600;
         }
 
-        .card-text {
-            color: #ffffff;
+        /* Card hover with gold edge animation */
+        .card {
+            background-color: #1e1e1e;
+            color: #ffd700;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px; /* Align it properly around the edges */
+            left: -2px;
+            width: calc(100% + 4px); /* Keep it just slightly outside the border */
+            height: calc(100% + 4px);
+            background: linear-gradient(270deg, #000000, #ffd700, #333333, #000000);
+            background-size: 400% 400%;
+            animation: borderGradient 5s ease infinite;
+            border-radius: 10px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @keyframes borderGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Ensure the image remains visible */
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            z-index: 2; /* Keep the image above the border animation */
+            position: relative;
+        }
+
+        .card-body {
+            position: relative;
+            z-index: 2;
+            color: #ffd700;
         }
 
         .form-control {
@@ -180,7 +175,6 @@
                 padding-top: 20px;
             }
         }
-
     </style>
 </head>
 <body>
@@ -188,7 +182,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logo.jpg" alt="@@@ Foods" width="50">
+                <img src="logo.jpg" alt="" width="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -198,13 +192,11 @@
                     <li class="nav-item"><a class="nav-link" href="Starters.html">Starters</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html">Main Course</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Add Ons</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dessert.html">Desserts</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="desserts.html">Desserts</a></li>
                     <li class="nav-item"><a class="nav-link" href="Hot Drinks.html">Drinks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Drinks.html">Hot Drinks</a></li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                
             </div>
         </div>
     </nav>
@@ -212,73 +204,90 @@
     <div class="side-navbar">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" data-target="tea-section">
-                    <img src="tea.jpg" alt="Tea">
-                    Hot Drinks
+                <a class="nav-link active" data-target="desserts-section">
+                    <img src="desserts.jpg" alt="Desserts">
+                    Desserts
                 </a>
             </li>
         </ul>
     </div>
 
     <div class="content">
-        <div id="tea-section" class="section active">
-            <h2 style="color: #ffd700;">Hot Drinks</h2>
+        <div id="desserts-section" class="section active">
+            <h2>Desserts</h2>
             <div class="row">
-
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img src="hot drinks/latte.jpg" class="card-img-top" alt="Latte">
+                        <img src="desserts/Watalappam-848x477.jpg" class="card-img-top" alt="Watalappam">
                         <div class="card-body">
-                            <h5 class="card-title">Coffee</h5>
-                            <p class="card-text">£2.50</p>
+                            <h5 class="card-title">Watalappam (E)</h5>
+                            <p class="card-text">£3.99</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img src="hot drinks/Masala-Chai-9998-2.jpg" class="card-img-top" alt="Masala Tea">
+                        <img src="desserts/watalappan_with_icecream.jpeg" class="card-img-top" alt="Watalappam with Ice Cream">
                         <div class="card-body">
-                            <h5 class="card-title">Masala Tea</h5>
-                            <p class="card-text">£2.50</p>
+                            <h5 class="card-title">Watalappam with Ice Cream (E)</h5>
+                            <p class="card-text">£5.99</p>
                         </div>
                     </div>
                 </div>
-
-               <div class="col-md-3">
-                    <div class="card mb-4">
-                        <img src="hot drinks/tea.webp" class="card-img-top" alt="Plain Tea">
-                        <div class="card-body">
-                            <h5 class="card-title">Plain Tea</h5>
-                            <p class="card-text">£2.50</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img src="hot drinks/Lemon-Tea-Pictures_large.webp" class="card-img-top" alt="Lemon Tea">
+                        <img src="desserts/Mango_pudding.jpg" class="card-img-top" alt="Mango Pudding">
                         <div class="card-body">
-                            <h5 class="card-title">Lemon Tea</h5>
-                            <p class="card-text">£2.50</p>
+                            <h5 class="card-title">Mango Pudding</h5>
+                            <p class="card-text">£2.99</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img src="tea.jpg" class="card-img-top" alt="Ginger Tea">
+                        <img src="desserts/Mango_pudding.jpg" class="card-img-top" alt="Mango Pudding with Ice Cream">
                         <div class="card-body">
-                            <h5 class="card-title">Ginger Tea</h5>
-                            <p class="card-text">£2.50</p>
+                            <h5 class="card-title">Mango Pudding with Ice Cream</h5>
+                            <p class="card-text">£4.99</p>
                         </div>
                     </div>
                 </div>
-                
-            </div>
-        </div>
-
-                <!-- Add more coffee items -->
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="desserts/ice_jelly.jpg" class="card-img-top" alt="Ice Cream and Jelly Fruit Salad">
+                        <div class="card-body">
+                            <h5 class="card-title">Ice Cream and Jelly Fruit Salad</h5>
+                            <p class="card-text">£5.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="desserts/Ice-Cream-Hoppers-Crunchy.webp" class="card-img-top" alt="Sweet Hoopers">
+                        <div class="card-body">
+                            <h5 class="card-title">Sweet Hoopers</h5>
+                            <p class="card-text">£4.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="desserts/orea.jpeg" class="card-img-top" alt="Ice Cream with Oreo or Nutella">
+                        <div class="card-body">
+                            <h5 class="card-title">Ice Cream with Oreo or Nutella</h5>
+                            <p class="card-text">£5.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="desserts/Falooda.jpg" class="card-img-top" alt="Falooda">
+                        <div class="card-body">
+                            <h5 class="card-title">Falooda</h5>
+                            <p class="card-text">£6.99</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -299,7 +308,6 @@
                 document.getElementById(target).classList.add('active');
             });
         });
-
     </script>
 </body>
 </html>

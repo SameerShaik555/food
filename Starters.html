@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,40 +8,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
         }
 
         .navbar {
-            background-color: #f8f9fa;
-            border-bottom: 2px solid #ffcc00;
-            padding: 10px 0;
+            background-color: #000;
+            padding: 15px 0;
+            border-bottom: 2px solid #ffd900;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd900;
         }
 
         .navbar-nav .nav-link.active {
             font-weight: bold;
-            color: red;
-        }
-
-        .navbar-nav .nav-link {
-            color: #000;
+            color: #ff4747;
         }
 
         .side-navbar {
-            background-color: #f8f9fa;
+            background-color: #000;
             padding-top: 20px;
             height: 100vh;
-            border-right: 1px solid #ddd;
+            border-right: 1px solid #ffd900;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: fixed;
-            top: 70px; /* Adjusted to align below the navbar */
+            top: 70px;
             left: 0;
             width: 120px;
         }
 
         .side-navbar .nav-link {
-            color: #000;
+            color: #ffd900;
             padding: 10px;
             text-align: center;
             display: flex;
@@ -50,42 +59,134 @@
         }
 
         .side-navbar .nav-link img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 5px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 2px solid #ffd900;
+            transition: 0.3s ease;
+        }
+
+        .side-navbar .nav-link img:hover {
+            box-shadow: 0px 4px 15px rgba(255, 217, 0, 0.8);
         }
 
         .side-navbar .nav-link.active {
-            background-color: #e9ecef;
+            background-color: #1c1c1c;
             border-radius: 10px;
         }
 
         .content {
-            margin-left: 140px; /* Adjusted for proper alignment */
-            padding: 20px;
+            margin-left: 140px;
+            padding: 30px;
+        }
+
+        /* Card hover with gold edge animation */
+        .card {
+            background-color: #1e1e1e;
+            color: #ffd900;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(270deg, #000000, #ffd900, #333333, #000000);
+            background-size: 400% 400%;
+            border-radius: 10px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: borderMotion 5s linear infinite;
+        }
+
+        .card-img-top {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    z-index: 2; /* Keep the image above the border animation */
+    position: relative;
+}
+
+.card-body {
+    position: relative;
+    z-index: 2;
+    color: #ffd700;
+}
+
+
+        @keyframes borderMotion {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
         }
 
         .card-img-top {
             height: 150px;
             object-fit: cover;
+            border-radius: 10px 10px 0 0;
         }
+
+        .card-title {
+            color: #ffd900;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: #ffffff;
+        }
+
+        .form-control {
+            background-color: #2e2e2e;
+            color: #fff;
+            border: 1px solid #ffd900;
+        }
+
+        .btn-outline-success {
+            border-color: #ffd900;
+            color: #ffd900;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #ffd900;
+            color: #000;
+        }
+
+        /* Hide side-navbar in mobile view */
         @media (max-width: 768px) {
-    .side-navbar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .content {
-        margin-left: 0;
-        padding-top: 20px;
-    }
-    .navbar-toggler {
-        float: right;
-    }
+            .side-navbar {
+                display: none; /* Hide side navbar */
+            }
+
+            .content {
+                margin-left: 0;
+                padding-top: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -93,7 +194,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="" alt="@@@ Foods" width="150">
+                <img src="logo.jpg" alt="@@@ Foods" width="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -101,16 +202,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Main Course</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Hot Drinks.html">Hot Drinks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="drinks.html">Drinks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="alcohol.html">Alcohol</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="starters.html">Starters</a></li>
-                    <!-- Other links as needed -->
+                    <li class="nav-item"><a class="nav-link" href="#">Add Ons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Dessert.html">Desserts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Hot Drinks.html">Drinks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Drinks.html">Hot Drinks</a></li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                
             </div>
         </div>
     </nav>
@@ -119,44 +216,171 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link active" data-target="veg-starters-section">
-                    <img src="starters/crispy-baked-chicken-wings-800x533.jpg" alt="Starters">
+                    <img src="starters/download.jpeg" alt="Vegetarian Starters">
                     Starters
                 </a>
             </li>
-            <!-- Add more starter categories as needed -->
         </ul>
     </div>
 
     <div class="content">
+        <!-- Veg Starters Section -->
         <div id="veg-starters-section" class="section active">
-            <h2>Starters - Veg Starters</h2>
+            <h2 style="color: #ffd700;">Starters - Vegetarian</h2>
             <div class="row">
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img src="starters/download.jpeg" class="card-img-top" alt="Spring Rolls">
+                        <img src="starters/Papadom.jpg" class="card-img-top" alt="Papadom">
                         <div class="card-body">
-                            <h5 class="card-title">Spring Rolls</h5>
+                            <h5 class="card-title">Papadom (V, G)</h5>
                             <p class="card-text">£2.50</p>
                         </div>
                     </div>
                 </div>
-                <!-- Add more veg starter items -->
-            </div>
-        </div>
-
-        <div id="non-veg-starters-section" class="section">
-            <h2>Starters - Non-Veg Starters</h2>
-            <div class="row">
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img src="starters/crispy-baked-chicken-wings-800x533.jpg" class="card-img-top" alt="Chicken Wings">
+                        <img src="starters/Medhu Vada.jpg" class="card-img-top" alt="Medhu Vada">
                         <div class="card-body">
-                            <h5 class="card-title">Chicken Wings</h5>
-                            <p class="card-text">£3.99</p>
+                            <h5 class="card-title">Medhu Vada (V, G)</h5>
+                            <p class="card-text">£1.99</p>
                         </div>
                     </div>
                 </div>
-                <!-- Add more non-veg starter items -->
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/masala-vada.jpeg" class="card-img-top" alt="Masala Vada">
+                        <div class="card-body">
+                            <h5 class="card-title">Masala Vada (V, G)</h5>
+                            <p class="card-text">£1.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/veg-roll.jpg" class="card-img-top" alt="Veg Roll">
+                        <div class="card-body">
+                            <h5 class="card-title">Veg Roll (V)</h5>
+                            <p class="card-text">£1.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/paneer_samosa.jpg" class="card-img-top" alt="Paneer Samosa">
+                        <div class="card-body">
+                            <h5 class="card-title">Paneer Samosa (V)</h5>
+                            <p class="card-text">£2.50</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/cashewpakoda.jpeg" class="card-img-top" alt="Cashew Pakoda">
+                        <div class="card-body">
+                            <h5 class="card-title">Cashew Pakoda (N)</h5>
+                            <p class="card-text">£5.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/cassavachips.jpg" class="card-img-top" alt="Kasava Chips">
+                        <div class="card-body">
+                            <h5 class="card-title">Kasava Chips (V)</h5>
+                            <p class="card-text">£5.99</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more veg starters here -->
+            </div>
+        </div>
+
+        <!-- Non-Veg Starters Section -->
+        <div id="non-veg-starters-section" class="section">
+            <h2 style="color: #ffd900;">Starters - Non-Vegetarian</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/Chicken Samosa.jpg" class="card-img-top" alt="Chicken Samosa">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Samosa</h5>
+                            <p class="card-text">£8.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/Mutton Samosa.jpg" class="card-img-top" alt="Mutton Samosa">
+                        <div class="card-body">
+                            <h5 class="card-title">Mutton Samosa</h5>
+                            <p class="card-text">£6.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/Mutton-rolls.jpg" class="card-img-top" alt="Mutton Roll">
+                        <div class="card-body">
+                            <h5 class="card-title">Mutton Roll</h5>
+                            <p class="card-text">£2.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/fish-patties.jpg" class="card-img-top" alt="Fish Patties">
+                        <div class="card-body">
+                            <h5 class="card-title">Fish Patties</h5>
+                            <p class="card-text">£1.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/FishCutlet.jpg" class="card-img-top" alt="Fish Cutlet">
+                        <div class="card-body">
+                            <h5 class="card-title">Fish Cutlet (F,E)</h5>
+                            <p class="card-text">£2.50</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/chicken-lollipop-.jpeg" class="card-img-top" alt="Chicken Lollipop">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Lollipop</h5>
+                            <p class="card-text">£5.99</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/kabaliprawns.jpg" class="card-img-top" alt="Kabali Prawns">
+                        <div class="card-body">
+                            <h5 class="card-title">Kabali Prawns (C)</h5>
+                            <p class="card-text">£7.99</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="starters/Fish Fry.jpg" class="card-img-top" alt="Fish Fry">
+                        <div class="card-body">
+                            <h5 class="card-title">Fish Fry (Nethili/Sadin/King Fish/Sea Bass)</h5>
+                            <p class="card-text">£7.99</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more non-veg starters here -->
             </div>
         </div>
     </div>
